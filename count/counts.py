@@ -52,3 +52,25 @@ def value_prime(number):
       else:
         i+=1
   return(i)
+
+def is_palindrome_bin(number):
+  """
+  is checking natural and binear palindrome of number
+  """
+  if str(number) != str(number)[::-1]:
+      #    xyz       !=       zyx
+    return False
+  bin_number = bin(number)[2:]
+  return bin_number == bin_number[::-1]
+
+def list_palindromes(start,stop):
+  """
+  is checkin palindromes in range as atributes
+  start - fitst number
+  stop - last number to check
+  """
+  palindromes = []
+  for i in range (start,stop):
+    if is_palindrome(i) == True:
+      palindromes.append(i)
+  return palindromes
